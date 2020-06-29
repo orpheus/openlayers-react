@@ -1,12 +1,21 @@
 import React, { useEffect, useContext, useRef } from 'react'
+import { MapContext } from '../../Map'
+import createFeatures from '../../helpers/createFeatures'
+import Feature from '../../Feature'
+import { Vector as VectorSource } from 'ol/source'
+import { GeoJSON } from 'ol/format'
+import { Vector as VectorLayer } from 'ol/layer'
 
-import { MapContext } from '../Map'
-import Feature from './Feature'
+export const VectorLayerContext = React.createContext(null)
 
-import createVectorLayer from '../helpers/createVectorLayer'
-import createFeatures from '../helpers/createFeatures'
-
-const Vector = ({ layerData = {}, features = [] }) => {
+const Vector = ({
+  options,
+  sourceOptions = {},
+  layerData = {},
+  features = [],
+  featureCb,
+  children
+}) => {
   const { map, init } = useContext(MapContext)
   const layerRef = useRef(null)
   const layerSourceRef = useRef(null)
@@ -14,22 +23,26 @@ const Vector = ({ layerData = {}, features = [] }) => {
 
   const getFeatures = React.useCallback(() => {
     if (featuresRef.current === null) {
-      featuresRef.current = createFeatures(features, layerData)
+      featuresRef.current = createFeatures(features, layerData.type, featureCb)
     }
     return featuresRef.current
-  }, [features, layerData])
+  }, [features, layerData, featureCb])
 
   const getLayer = React.useCallback(() => {
     if (layerRef.current === null) {
-      const { layer, source } = createVectorLayer(
-        layerData.options,
-        getFeatures()
-      )
-      layerRef.current = layer
+      const source = new VectorSource({
+        format: new GeoJSON(),
+        features: getFeatures(),
+        ...sourceOptions
+      })
+      layerRef.current = new VectorLayer({
+        source,
+        ...options
+      })
       layerSourceRef.current = source
     }
     return layerRef.current
-  }, [getFeatures, layerData])
+  }, [getFeatures, options, sourceOptions])
 
   useEffect(() => {
     if (init) {
@@ -42,11 +55,29 @@ const Vector = ({ layerData = {}, features = [] }) => {
     }
   }, [map, init, getLayer])
 
-  return getFeatures()
-    ? getFeatures()?.map((feature, i) => {
-      return <Feature feature={feature} key={i} i={i} />
-    })
-    : null
+  // if children return children with context provider (in case they want to render features individually)
+  if (children) {
+    return <VectorLayerContext value={{ layer: getLayer(), layerSource: getLayer().getSource() }}>
+      {children}
+    </VectorLayerContext>
+  }
+
+  // else return a map of features
+  return getFeatures()?.map((feature, i) => {
+    let id = feature.getId()
+    if (!id) id = feature.ol_uid
+    return <Feature
+      key={id}
+      feature={feature}
+    />
+  })
+}
+
+Vector.defaultProps = {
+  options: {},
+  sourceOptions: {},
+  layerData: {},
+  features: []
 }
 
 export default Vector

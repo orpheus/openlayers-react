@@ -3,8 +3,8 @@ import TileLayer from './Tile'
 import VectorLayer from './Vector'
 
 const layer = {
-  tile: TileLayer,
-  vector: VectorLayer
+  Tile: TileLayer,
+  Vector: VectorLayer
 }
 
 module.exports = {

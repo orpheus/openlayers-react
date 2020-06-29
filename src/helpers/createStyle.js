@@ -3,18 +3,27 @@ import hexToRgb from 'hex-to-rgba'
 
 export const LINE_DASH = [30, 30]
 
-const defaultStyle = { lineType: 0, fill: true, color: '#F91' }
-
-export default function createStyle (defaultStyles = defaultStyle) {
+export default function createStyle ({
+  lineType = 0,
+  fill = true,
+  color = '#F91',
+  lineDash = LINE_DASH,
+  strokeOptions = {},
+  fillOptions = {},
+  ...rest
+}) {
   // if (!defaultStyles) return
   return new Style({
     stroke: new Stroke({
-      color: hexToRgb(defaultStyles.color),
+      color: hexToRgb(color),
       width: 3,
-      lineDash: defaultStyles.lineType ? LINE_DASH : undefined
+      lineDash: lineType ? lineDash : undefined,
+      ...strokeOptions
     }),
     fill: new Fill({
-      color: hexToRgb(defaultStyles.color, defaultStyles.fill ? 0.7 : 0)
-    })
+      color: hexToRgb(color, fill ? 0.7 : 0),
+      ...fillOptions
+    }),
+    ...rest
   })
 }

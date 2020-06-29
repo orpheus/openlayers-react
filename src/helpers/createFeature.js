@@ -33,7 +33,7 @@ export default function createFeature (featureData, layerType, callback) {
     geometry
   })
 
-  callback(feature)
+  if (callback) callback(feature, featureData)
 
   return feature
 }

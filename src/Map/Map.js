@@ -1,50 +1,39 @@
 import React, { useRef, useEffect, useState } from 'react'
 import OlMap from 'ol/Map'
 import View from 'ol/View'
-import TileLayer from 'ol/layer/Tile'
-import XYZ from 'ol/source/XYZ'
-
-import { fromLonLat } from 'ol/proj'
-
-export const LAS_MAP_PROJECTION = 'EPSG:4326'
-export const lonLat = [parseFloat('-87.458832'), parseFloat('20.213287')]
-export const webMercatorCenter = fromLonLat(lonLat, LAS_MAP_PROJECTION)
-
-export const defaultView = new View({
-  center: webMercatorCenter,
-  zoom: 14,
-  projection: LAS_MAP_PROJECTION
-})
 
 export const MapContext = React.createContext(null)
 
-function Map ({ children }) {
-  const map = useRef()
-  const mapDiv = useRef()
+function Map ({ options, children, ...rest }) {
+  const map = useRef(null)
   const [init, setInit] = useState(false)
 
   useEffect(() => {
     map.current = new OlMap({
       target: 'map',
-      layers: [
-        new TileLayer({
-          source: new XYZ({
-            url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          })
-        })
-      ],
-      view: defaultView
+      ...options
     })
     setInit(true)
-  }, [])
+  }, [options])
 
   return (
     <MapContext.Provider value={{ map: map.current, init }}>
-      <div className="map" id="map" ref={mapDiv} style={{ width: '100%', height: '100%' }}>
+      <div className="map" id="map" style={{ width: '100%', height: '100%' }} {...rest}>
         {children}
       </div>
     </MapContext.Provider>
   )
+}
+
+const defaultOptions = {
+  view: new View({
+    center: [0, 0],
+    zoom: 5
+  })
+}
+
+Map.defaultProps = {
+  options: defaultOptions
 }
 
 export default Map
