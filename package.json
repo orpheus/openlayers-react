@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "transpile": "npx babel src --out-dir lib",
+    "transpile-watch":  "npx babel src --watch --out-dir lib",
     "storybook": "start-storybook",
     "lint": "eslint --ext js,jsx --fix src/"
   },

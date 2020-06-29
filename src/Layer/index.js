@@ -2,13 +2,13 @@ import Layers from './Layers'
 import TileLayer from './Tile'
 import VectorLayer from './Vector'
 
-const layers = {
+const layer = {
   tile: TileLayer,
   vector: VectorLayer
 }
 
 module.exports = {
-  layers,
+  layer,
   Layers,
   TileLayer,
   VectorLayer

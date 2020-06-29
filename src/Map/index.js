@@ -1,6 +1,4 @@
-import Map, { MapContext } from './Map'
+import Map from './Map'
 
+export { MapContext } from './Map'
 export default Map
-module.exports = {
-  MapContext
-}

@@ -40,7 +40,7 @@ function Map ({ children }) {
 
   return (
     <MapContext.Provider value={{ map: map.current, init }}>
-      <div className="map" id="map" ref={mapDiv}>
+      <div className="map" id="map" ref={mapDiv} style={{ width: '100%', height: '100%' }}>
         {children}
       </div>
     </MapContext.Provider>

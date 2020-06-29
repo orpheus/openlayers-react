@@ -1,12 +1,12 @@
 import Map from './Map'
-import { Layers, layers, TileLayer, VectorLayer } from './Layer'
+import { Layers, layer, TileLayer, VectorLayer } from './Layer'
 import Feature from './Feature'
 import Interface from './Interface'
 
 export {
   Map,
   Layers,
-  layers,
+  layer,
   TileLayer,
   VectorLayer,
   Feature,
