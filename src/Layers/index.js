@@ -1,10 +1,10 @@
 import Layers from './Layers'
-import TileLayer from './Tile'
-import VectorLayer from './Vector'
+import Tile from './Tile'
+import Vector from './Vector'
 
 const layer = {
-  Tile: TileLayer,
-  Vector: VectorLayer
+  Tile,
+  Vector
 }
 
 module.exports = {
