@@ -9,7 +9,7 @@ export default function applyEvents (source, events) {
 export function removeEvents (source, events) {
   for (const eventName in events) {
     if (Object.prototype.hasOwnProperty.call(events, eventName)) {
-      source.off(eventName, events[eventName])
+      source.un(eventName, events[eventName])
     }
   }
 }

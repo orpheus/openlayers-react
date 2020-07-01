@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
-import useInterface from '../hooks/useInterface'
+
 import applyEvents, { removeEvents } from '../util/applyEvents'
 import createStyle from '../helpers/createStyle'
+import useMapContext from '../hooks/useMapContext'
 
 /**
  * @return {null|Component}
  */
 export default function UseMapClick () {
-  const interfaceProps = useInterface()
+  const { map, init } = useMapContext()
 
-  if (interfaceProps.init) {
+  if (init) {
     // dynamically render different map click logic containers
-    return <MapClickDefault {...interfaceProps} />
+    return <MapClickDefault map={map} />
   }
 
   return null

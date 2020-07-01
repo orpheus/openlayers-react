@@ -1,9 +1,7 @@
 import React from 'react'
-import { useInterface } from '../hooks'
 
-function Interface ({ children, ...rest }) {
-  const { map } = useInterface()
-  return <div {...rest}>{children({ map })}</div>
+function Interface ({ children, style, ...rest }) {
+  return <div style={{ position: 'fixed', zIndex: 1, ...style }} {...rest}>{children}</div>
 }
 
 Interface.defaultProps = {
