@@ -7,7 +7,9 @@ import {
   Interactions,
   interaction,
   Controls,
-  control
+  control,
+  Overlays,
+  Overlay
 } from 'rol'
 import { TulumTile, TulumView } from '../../../../src/presets'
 
@@ -38,6 +40,16 @@ function Map1 () {
       <control.ZoomSlider />
       <control.FullScreen />
     </Controls>
+    <Overlays>
+      <Overlay options={{
+        position: [
+          -87.46380561,
+          20.21145352
+        ]
+      }}>
+        {null}
+      </Overlay>
+    </Overlays>
   </Map>
 }
 

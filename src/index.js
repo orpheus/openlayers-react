@@ -7,6 +7,7 @@ import Interface from './Interface'
 import { UseMapClick } from './components'
 import { Interactions, interaction } from './Interactions'
 import { Controls, control } from './Controls'
+import { Overlays, Overlay } from './Overlays'
 import * as hooks from './hooks'
 
 module.exports = {
@@ -17,6 +18,8 @@ module.exports = {
   interaction,
   Controls,
   control,
+  Overlays,
+  Overlay,
   Feature,
   Interface,
   UseMapClick,
