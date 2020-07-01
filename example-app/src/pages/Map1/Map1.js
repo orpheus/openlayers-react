@@ -1,5 +1,12 @@
 import React from 'react'
-import { Map, Layers, layer, UseMapClick } from 'rol'
+import {
+  Map,
+  Layers,
+  layer,
+  // UseMapClick,
+  Interactions,
+  interaction
+} from 'rol'
 import { TulumTile, TulumView } from '../../../../src/presets'
 
 import lasLayers from '../../../../mockData/layers'
@@ -10,6 +17,9 @@ function Map1 () {
   // typically our logic would go here for each child component: BAD
   // now we can create components with top level access to our map
   return <Map options={{ view: TulumView, controls: [] }}>
+    <Interactions id={'interactions'}>
+      <interaction.Select />
+    </Interactions>
     <Layers id={'map1-layers'}>
       <layer.Tile />
       <layer.Tile options={{ source: TulumTile }} />
@@ -22,7 +32,6 @@ function Map1 () {
         />
       })}
     </Layers>
-    <UseMapClick />
   </Map>
 }
 

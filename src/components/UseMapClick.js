@@ -10,6 +10,7 @@ export default function UseMapClick () {
   const interfaceProps = useInterface()
 
   if (interfaceProps.init) {
+    // dynamically render different map click logic containers
     return <MapClickDefault {...interfaceProps} />
   }
 

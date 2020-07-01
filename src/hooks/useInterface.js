@@ -1,8 +1,8 @@
-import { useContext } from 'react'
-import { MapContext } from '../Map'
+import useMapContext from './useMapContext'
 
 export default function useInterface () {
-  const { map, init } = useContext(MapContext)
+  const { map, init } = useMapContext()
+  // aggregate other contexts and return them
 
   return { map, init }
 }

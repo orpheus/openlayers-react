@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import { MapContext } from '../Map'
+import React from 'react'
+import { useInterface } from '../hooks'
 
 function Interface ({ children, ...rest }) {
-  const { map } = useContext(MapContext)
+  const { map } = useInterface()
   return <div {...rest}>{children({ map })}</div>
 }
 

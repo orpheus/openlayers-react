@@ -9,7 +9,5 @@ const layer = {
 
 module.exports = {
   layer,
-  Layers,
-  TileLayer,
-  VectorLayer
+  Layers
 }
