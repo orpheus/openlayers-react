@@ -25,16 +25,24 @@ export function MapClickDefault ({ map }) {
       const [feature] = e.target.getFeaturesAtPixel(e.pixel)
       if (feature) {
         feature.setStyle(createStyle({
-          color: '#ff231e',
+          color: '#56fffc',
           fill: true
         }))
       }
     }
 
-    applyEvents(map, { click })
+    function dblclick (e) {
+      e.preventDefault()
+      const [feature] = e.target.getFeaturesAtPixel(e.pixel)
+      if (feature) {
+        feature.setStyle(undefined)
+      }
+    }
+
+    applyEvents(map, { click, dblclick })
 
     return () => {
-      removeEvents(map, { click })
+      removeEvents(map, { click, dblclick })
     }
   }, [map])
   return null
