@@ -20,7 +20,7 @@ const defaultOptions = {
   zoomInTipLabel: undefined,
   zoomOutTipLabel: undefined,
   delta: undefined,
-  target: undefined,
+  target: undefined
 }
 
 const defaultEvents = {

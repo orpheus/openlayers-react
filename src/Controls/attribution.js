@@ -1,4 +1,4 @@
-import AttributionControl from 'ol/control/Attribution';
+import AttributionControl from 'ol/control/Attribution'
 import useControl from '../hooks/useControl'
 
 /**
