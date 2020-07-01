@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Feature = props => {
+const Feature = () => {
   return null
 }
 

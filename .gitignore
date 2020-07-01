@@ -117,7 +117,7 @@ dist
 
 .idea
 scratch/
-src/mlg/*
+src/presets/*
 
 lib/
 

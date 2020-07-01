@@ -13,7 +13,8 @@ const Vector = ({
   sourceOptions = {},
   layerData = {},
   features = [],
-  featureCb,
+  onFeatureCreate,
+  featureOptions,
   children
 }) => {
   const { map, init } = useContext(MapContext)
@@ -23,10 +24,15 @@ const Vector = ({
 
   const getFeatures = React.useCallback(() => {
     if (featuresRef.current === null) {
-      featuresRef.current = createFeatures(features, layerData.type, featureCb)
+      featuresRef.current = createFeatures({
+        features,
+        layerType: layerData.type,
+        onCreateCb: onFeatureCreate,
+        featureOptions
+      })
     }
     return featuresRef.current
-  }, [features, layerData, featureCb])
+  }, [features, layerData, onFeatureCreate, featureOptions])
 
   const getLayer = React.useCallback(() => {
     if (layerRef.current === null) {

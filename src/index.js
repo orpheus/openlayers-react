@@ -4,6 +4,7 @@ import Map from './Map'
 import { Layers, layer, TileLayer, VectorLayer } from './Layer'
 import Feature from './Feature'
 import Interface from './Interface'
+import { UseMapClick } from './components'
 
 export {
   Map,
@@ -12,5 +13,6 @@ export {
   TileLayer,
   VectorLayer,
   Feature,
-  Interface
+  Interface,
+  UseMapClick
 }

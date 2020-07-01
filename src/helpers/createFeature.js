@@ -2,15 +2,12 @@ import { LineString, Point, Polygon } from 'ol/geom'
 import Feature from 'ol/Feature'
 import { layerTypeMap, LINE, POINT, POLYGON } from '../constants'
 
-/**
- * Create an OpenLayer feature from feature data
- * @param {Object} featureData
- * @param {Array} featureData.polyCoords - poly coordinates for feature
- * @param layerType toDo: create layerType jsdoc type
- * @param {Function} [callback] - function to run after the feature has been created before it's return with the Feature passed as an argument
- * @returns {Feature|undefined}
- */
-export default function createFeature (featureData, layerType, callback) {
+export default function createFeature ({
+  layerType,
+  featureData,
+  callback,
+  featureOptions
+}) {
   const type = layerTypeMap[layerType]
   if (!type) return
 
@@ -30,7 +27,8 @@ export default function createFeature (featureData, layerType, callback) {
   }
 
   const feature = new Feature({
-    geometry
+    geometry,
+    ...featureOptions
   })
 
   if (callback) callback(feature, featureData)
