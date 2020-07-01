@@ -9,6 +9,7 @@ import { Interactions, interaction } from './Interactions'
 import { Controls, control } from './Controls'
 import { Overlays, Overlay } from './Overlays'
 import * as hooks from './hooks'
+import * as util from './util'
 
 module.exports = {
   Map,
@@ -23,5 +24,6 @@ module.exports = {
   Feature,
   Interface,
   UseMapClick,
-  ...hooks
+  ...hooks,
+  ...util
 }
