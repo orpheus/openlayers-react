@@ -5,7 +5,9 @@ import {
   layer,
   // UseMapClick,
   Interactions,
-  interaction
+  interaction,
+  Controls,
+  control
 } from 'rol'
 import { TulumTile, TulumView } from '../../../../src/presets'
 
@@ -17,9 +19,6 @@ function Map1 () {
   // typically our logic would go here for each child component: BAD
   // now we can create components with top level access to our map
   return <Map options={{ view: TulumView, controls: [] }}>
-    <Interactions id={'interactions'}>
-      <interaction.Select />
-    </Interactions>
     <Layers id={'map1-layers'}>
       <layer.Tile />
       <layer.Tile options={{ source: TulumTile }} />
@@ -32,6 +31,13 @@ function Map1 () {
         />
       })}
     </Layers>
+    <Interactions id={'interactions'}>
+      <interaction.Select />
+    </Interactions>
+    <Controls>
+      <control.ZoomSlider />
+      <control.FullScreen />
+    </Controls>
   </Map>
 }
 

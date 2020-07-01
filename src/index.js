@@ -6,6 +6,7 @@ import Feature from './Feature'
 import Interface from './Interface'
 import { UseMapClick } from './components'
 import { Interactions, interaction } from './Interactions'
+import { Controls, control } from './Controls'
 import * as hooks from './hooks'
 
 module.exports = {
@@ -14,6 +15,8 @@ module.exports = {
   layer,
   Interactions,
   interaction,
+  Controls,
+  control,
   Feature,
   Interface,
   UseMapClick,
