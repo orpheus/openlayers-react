@@ -3,7 +3,7 @@ import {
   Map,
   Layers,
   layer,
-  // UseMapClick,
+  UseMapClick,
   Interactions,
   interaction,
   Controls,
@@ -34,22 +34,16 @@ function Map1 () {
       })}
     </Layers>
     <Interactions id={'interactions'}>
-      <interaction.Select />
+      <interaction.DragRotate />
     </Interactions>
     <Controls>
       <control.ZoomSlider />
       <control.FullScreen />
     </Controls>
     <Overlays>
-      <Overlay options={{
-        position: [
-          -87.46380561,
-          20.21145352
-        ]
-      }}>
-        {null}
-      </Overlay>
+      <Overlay options={{ position: [-87.46380561, 20.21145352] }} />
     </Overlays>
+    <UseMapClick />
   </Map>
 }
 
