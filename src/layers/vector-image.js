@@ -1,11 +1,11 @@
-import ImageLayer from 'ol/layer/Image'
+import VectorImageLayer from 'ol/layer/VectorImage'
 import useLayer from '../hooks/useLayer'
 
 /**
  * @return {null}
  */
-export default function Image ({ options, events }) {
-  useLayer({ Layer: ImageLayer, options, events })
+export default function VectorImage ({ options, events }) {
+  useLayer({ Layer: VectorImageLayer, options, events })
   return null
 }
 
@@ -19,8 +19,15 @@ const defaultOptions = {
   maxResolution: undefined,
   minZoom: undefined,
   maxZoom: undefined,
+  renderOrder: undefined,
+  renderBuffer: undefined,
+  source: undefined,
   map: undefined,
-  source: undefined
+  declutter: undefined,
+  style: undefined,
+  updateWhileAnimating: undefined,
+  updateWhileInteraction: undefined,
+  imageRatio: undefined
 }
 
 const defaultEvents = {
@@ -40,7 +47,7 @@ const defaultEvents = {
   propertychange: undefined
 }
 
-Image.defaultProps = {
+VectorImage.defaultProps = {
   options: defaultOptions,
   events: defaultEvents
 }

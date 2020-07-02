@@ -1,38 +1,51 @@
-import { useEffect, useRef, useCallback } from 'react'
-import OSM from 'ol/source/OSM'
 import TileLayer from 'ol/layer/Tile'
-import useMapContext from '../hooks/useMapContext'
+import OSM from 'ol/source/OSM'
+import useLayer from '../hooks/useLayer'
 
-const Tile = ({ options }) => {
-  const { map, init } = useMapContext()
-  const layerRef = useRef(null)
-
-  const getLayer = useCallback(() => {
-    if (layerRef.current === null) {
-      layerRef.current = new TileLayer({
-        ...options
-      })
-    }
-    return layerRef.current
-  }, [options])
-
-  useEffect(() => {
-    if (init) {
-      map.addLayer(getLayer())
-    }
-    return () => {
-      if (init) {
-        map.removeLayer(getLayer())
-      }
-    }
-  }, [init, map, getLayer])
+/**
+ * @return {null}
+ */
+export default function Tile ({ options, events }) {
+  useLayer({ Layer: TileLayer, options, events })
   return null
 }
 
-Tile.defaultProps = {
-  options: {
-    source: new OSM()
-  }
+const defaultOptions = {
+  className: undefined,
+  opacity: undefined,
+  visible: undefined,
+  extent: undefined,
+  zIndex: undefined,
+  minResolution: undefined,
+  maxResolution: undefined,
+  minZoom: undefined,
+  maxZoom: undefined,
+  preload: undefined,
+  source: new OSM(),
+  map: undefined,
+  useInterimTilesOnError: undefined
 }
 
-export default Tile
+const defaultEvents = {
+  change: undefined,
+  'change:extent': undefined,
+  'change:maxResolution': undefined,
+  'change:maxZoom': undefined,
+  'change:minResolution': undefined,
+  'change:minZoom': undefined,
+  'change:opacity': undefined,
+  'change:preload': undefined,
+  'change:source': undefined,
+  'change:useInterimTilesOnError': undefined,
+  'change:visible': undefined,
+  'change:zIndex': undefined,
+  error: undefined,
+  postrender: undefined,
+  prerender: undefined,
+  propertychange: undefined
+}
+
+Tile.defaultProps = {
+  options: defaultOptions,
+  events: defaultEvents
+}

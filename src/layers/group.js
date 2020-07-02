@@ -1,16 +1,15 @@
-import ImageLayer from 'ol/layer/Image'
+import GroupLayer from 'ol/layer/Group'
 import useLayer from '../hooks/useLayer'
 
 /**
  * @return {null}
  */
-export default function Image ({ options, events }) {
-  useLayer({ Layer: ImageLayer, options, events })
+export default function Group ({ options, events }) {
+  useLayer({ Layer: GroupLayer, options, events })
   return null
 }
 
 const defaultOptions = {
-  className: undefined,
   opacity: undefined,
   visible: undefined,
   extent: undefined,
@@ -19,28 +18,25 @@ const defaultOptions = {
   maxResolution: undefined,
   minZoom: undefined,
   maxZoom: undefined,
-  map: undefined,
-  source: undefined
+  layers: undefined
 }
 
 const defaultEvents = {
   change: undefined,
   'change:extent': undefined,
+  'change:layers': undefined,
   'change:maxResolution': undefined,
   'change:maxZoom': undefined,
   'change:minResolution': undefined,
   'change:minZoom': undefined,
   'change:opacity': undefined,
-  'change:source': undefined,
   'change:visible': undefined,
   'change:zIndex': undefined,
   error: undefined,
-  postrender: undefined,
-  prerender: undefined,
   propertychange: undefined
 }
 
-Image.defaultProps = {
+Group.defaultProps = {
   options: defaultOptions,
   events: defaultEvents
 }

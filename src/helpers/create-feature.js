@@ -5,8 +5,7 @@ import { layerTypeMap, LINE, POINT, POLYGON } from '../constants'
 export default function createFeature ({
   layerType,
   featureData,
-  callback,
-  featureOptions
+  callback
 }) {
   const type = layerTypeMap[layerType]
   if (!type) return
@@ -27,8 +26,7 @@ export default function createFeature ({
   }
 
   const feature = new Feature({
-    geometry,
-    ...featureOptions
+    geometry
   })
 
   if (callback) callback(feature, featureData)

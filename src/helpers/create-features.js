@@ -10,16 +10,14 @@ import createFeature from './create-feature'
 export default function createFeatures ({
   features = [],
   layerType,
-  onCreateCb,
-  featureOptions
+  onCreateCb
 }) {
   const tmpArr = []
   for (const feature of features) {
     tmpArr.push(createFeature({
       featureData: feature,
       layerType,
-      onCreateCb,
-      featureOptions
+      onCreateCb
     }))
   }
   return tmpArr
