@@ -2,7 +2,7 @@ import Overlay from 'ol/Overlay'
 import { useRef, useEffect } from 'react'
 
 import { useMapContext } from './index'
-import applyEvents, { removeEvents } from '../util/applyEvents'
+import applyEvents, { removeEvents } from '../util/apply-events'
 
 export default function useOverlay ({ options, events, element }) {
   const overlay = useRef(null)

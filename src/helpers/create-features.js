@@ -1,4 +1,4 @@
-import createFeature from './createFeature'
+import createFeature from './create-feature'
 
 /**
  * Helper function to create multiple features from an array of feature data

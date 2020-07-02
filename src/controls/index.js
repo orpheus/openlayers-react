@@ -1,4 +1,4 @@
-import Controls from './Controls'
+import Controls from './controls'
 import Attribution from './attribution'
 import FullScreen from './full-screen'
 import MousePosition from './mouse-position'

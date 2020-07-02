@@ -1,4 +1,4 @@
-import applyEvents, { removeEvents } from './applyEvents'
+import applyEvents, { removeEvents } from './apply-events'
 
 export {
   applyEvents,

@@ -1,6 +1,6 @@
-import createFeature from './createFeature'
-import createFeatures from './createFeatures'
-import createStyle from './createStyle'
+import createFeature from './create-feature'
+import createFeatures from './create-features'
+import createStyle from './create-style'
 
 export {
   createFeature,

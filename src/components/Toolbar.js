@@ -11,7 +11,7 @@ export default function Toolbar () {
   const { store, setStore } = React.useContext(FakeStoreContext)
 
   function setActiveTool (tool) {
-    console.log("SET ACTIVE TOOL: ", tool)
+    console.log('SET ACTIVE TOOL: ', tool)
     setStore(prev => ({
       ...prev,
       activeTool: store.activeTool === tool ? undefined : tool

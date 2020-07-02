@@ -13,13 +13,13 @@ import {
   Toolbar,
   Interface,
   FakeStore,
-  MapTools
+  MapTools,
+  createStyle
 } from 'rol'
 import { TulumTile, TulumView } from '../../../../src/presets'
 
 import lasLayers from '../../../../mockData/layers'
 import lasFeatures from '../../../../mockData/features'
-import createStyle from '../../../../src/helpers/createStyle'
 
 function Map1 () {
   // typically our logic would go here for each child component: BAD

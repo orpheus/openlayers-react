@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import useMapContext from './useMapContext'
-import applyEvents, { removeEvents } from '../util/applyEvents'
+import applyEvents, { removeEvents } from '../util/apply-events'
 
 export default function useInteraction ({ Interaction, options, events }) {
   const { map, init } = useMapContext()

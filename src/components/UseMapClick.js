@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
-import applyEvents, { removeEvents } from '../util/applyEvents'
-import createStyle from '../helpers/createStyle'
+import applyEvents, { removeEvents } from '../util/apply-events'
+import createStyle from '../helpers/create-style'
 import useMapContext from '../hooks/useMapContext'
 
 /**

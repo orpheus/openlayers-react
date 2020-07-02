@@ -1,4 +1,4 @@
-import Interactions from './Interactions'
+import Interactions from './interactions'
 import DoubleClickZoom from './double-click-zoom'
 import DragAndDrop from './drag-and-drop'
 import DragBox from './drag-box'

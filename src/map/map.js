@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import OlMap from 'ol/Map'
 import View from 'ol/View'
-import applyEvents, { removeEvents } from '../util/applyEvents'
+import applyEvents, { removeEvents } from '../util/apply-events'
 
 export const MapContext = React.createContext(null)
 

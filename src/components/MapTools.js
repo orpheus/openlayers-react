@@ -1,5 +1,5 @@
 import React from 'react'
-import { interaction, Interactions } from '../Interactions'
+import { interaction, Interactions } from '../interactions'
 import { FakeStoreContext } from './FakeStore'
 
 export default function MapTools () {

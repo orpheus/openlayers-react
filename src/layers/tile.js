@@ -1,4 +1,4 @@
-import { useEffect, useRef, useContext, useCallback } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import OSM from 'ol/source/OSM'
 import TileLayer from 'ol/layer/Tile'
 import useMapContext from '../hooks/useMapContext'
