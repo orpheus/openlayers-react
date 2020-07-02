@@ -10,6 +10,7 @@ import { Overlays, Overlay } from './Overlays'
 import * as hooks from './hooks'
 import * as util from './util'
 import * as components from './components'
+import * as helpers from './helpers'
 
 module.exports = {
   Map,
@@ -25,5 +26,6 @@ module.exports = {
   Interface,
   ...hooks,
   ...util,
-  ...components
+  ...components,
+  ...helpers
 }
