@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import createFeatures from '../../helpers/createFeatures'
-import Feature from '../../Feature'
 import { Vector as VectorSource } from 'ol/source'
 import { GeoJSON } from 'ol/format'
 import { Vector as VectorLayer } from 'ol/layer'
-import useMapContext from '../../hooks/useMapContext'
+import useMapContext from '../hooks/useMapContext'
+import createFeatures from '../helpers/createFeatures'
+import Feature from '../Feature'
 
 export const VectorLayerContext = React.createContext(null)
 

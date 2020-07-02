@@ -1,10 +1,10 @@
 import { useEffect, useRef, useContext, useCallback } from 'react'
 import OSM from 'ol/source/OSM'
 import TileLayer from 'ol/layer/Tile'
-import { MapContext } from '../../Map'
+import useMapContext from '../hooks/useMapContext'
 
 const Tile = ({ options }) => {
-  const { map, init } = useContext(MapContext)
+  const { map, init } = useMapContext()
   const layerRef = useRef(null)
 
   const getLayer = useCallback(() => {

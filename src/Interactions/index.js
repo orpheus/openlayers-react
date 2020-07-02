@@ -15,7 +15,7 @@ import MouseWheelZoom from './mouse-wheel-zoom'
 import PinchRotate from './pinch-rotate'
 import PinchZoom from './pinch-zoom'
 import Pointer from './pointer'
-import Select from './Select'
+import Select from './select'
 import Snap from './snap'
 import Translate from './translate'
 
