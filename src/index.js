@@ -9,7 +9,6 @@ import { Controls, control } from './controls'
 import { Overlays, Overlay } from './overlays'
 import * as hooks from './hooks'
 import * as util from './util'
-import * as components from './components'
 import * as helpers from './helpers'
 
 module.exports = {
@@ -26,6 +25,5 @@ module.exports = {
   Interface,
   ...hooks,
   ...util,
-  ...components,
   ...helpers
 }

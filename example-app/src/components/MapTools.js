@@ -1,6 +1,6 @@
 import React from 'react'
-import { interaction, Interactions } from '../interactions'
 import { FakeStoreContext } from './FakeStore'
+import Interactions from 'rol/interactions/interactions'
 
 export default function MapTools () {
   const { store } = React.useContext(FakeStoreContext)

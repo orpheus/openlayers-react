@@ -4,6 +4,9 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
+window.ReactIndex = React
+console.log(window.ReactIndex === window.ReactMap, window.ReactIndex === window.ReactFake, window.ReactMap === window.ReactFake)
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

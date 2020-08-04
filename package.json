@@ -1,12 +1,19 @@
 {
-  "name": "openlayers-react",
-  "version": "1.0.0",
+  "name": "ol6-react",
+  "version": "0.1.0",
   "description": "",
-  "main": "lib/index.js",
+  "files": [
+    "/lib",
+    "/dist"
+  ],
+  "main": "dist/ol6-react-bundle.cjs.min.js",
+  "module": "dist/ol6-react-bundle.esm.min.js",
+  "browser": "dist/ol6-react-bundle.umd.min.js",
   "scripts": {
     "transpile": "npx babel src --out-dir lib",
     "transpile-watch": "npx babel src --watch --out-dir lib",
-    "lint": "eslint --ext js,jsx --fix src/"
+    "lint": "eslint --ext js,jsx --fix src/",
+    "bundle":  "npx rollup -c"
   },
   "author": "",
   "license": "ISC",

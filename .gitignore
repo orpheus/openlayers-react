@@ -118,7 +118,5 @@ dist
 .idea
 scratch/
 src/presets/*
-
 lib/
-
-mockData/
+dist/
