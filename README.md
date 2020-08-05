@@ -4,26 +4,33 @@ ___
 ### Install
 1) `npm i -S ol6-react`
 
-   `> ol is a peer dependency so you must manuall install it`
-
 2) `npm i ol^6.3.1`
+
+   `> ol is a peer dependency so you must manually install it`
+
 
 ### Use
 
-All modules are exported at the root of the project. Utilize tree
-shaking if deconstructing root imports.
+All modules are exported at the root of the project. Look into tree shaking if using webpack or rollup.
+Or import using absolute paths. See github repo for paths.
+
+`import Map from 'ol6-react/map`
+
+vs
+
+`import { Map } from 'ol6-react`
 
 Basic example:
 
 ```js
 import { Map, Layers, layers } from 'ol6-react'
-import Tile from '../some/folder'
+import TileSource from '../some/folder'
 import features from '../features/folder'
 
 function App () {
   return <Map>
     <Layers>
-      <layer.Tile options={{ source: Tile }}  />
+      <layer.Tile options={{ source: TileSource }}  />
       <layer.Vector
         features={features}
       />
