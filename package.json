@@ -1,21 +1,19 @@
 {
   "name": "ol6-react",
-  "version": "0.1.0",
-  "description": "",
-  "files": [
-    "/lib",
-    "/dist"
-  ],
+  "version": "0.1.1",
+  "description": "react wrapper for openlayers-v6",
+  "files": ["/dist"],
   "main": "dist/ol6-react-bundle.cjs.min.js",
   "module": "dist/ol6-react-bundle.esm.min.js",
   "browser": "dist/ol6-react-bundle.umd.min.js",
   "scripts": {
     "transpile": "npx babel src --out-dir lib",
     "transpile-watch": "npx babel src --watch --out-dir lib",
-    "lint": "eslint --ext js,jsx --fix src/",
-    "bundle":  "npx rollup -c"
+    "bundle": "npx rollup -c",
+    "build": "npm run transpile && npm run bundle",
+    "lint": "eslint --ext js,jsx --fix src/"
   },
-  "author": "",
+  "author": "orpheus (ohryan)",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -30,6 +28,8 @@
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
@@ -40,6 +40,8 @@
     "eslint-plugin-react": "^7.15.1",
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-standard": "^4.0.1",
-    "rollup": "^2.18.1"
+    "rollup": "^2.18.1",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-postcss": "^3.1.4"
   }
 }
