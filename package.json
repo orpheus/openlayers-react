@@ -1,6 +1,6 @@
 {
   "name": "ol6-react",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "react wrapper for openlayers-v6",
   "files": ["/dist"],
   "main": "dist/ol6-react-bundle.cjs.min.js",
@@ -20,11 +20,6 @@
     "hex-to-rgba": "^2.0.1",
     "prop-types": "^15.7.2"
   },
-  "peerDependencies": {
-    "ol": "^6.3.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
     "@babel/core": "^7.10.3",
@@ -42,6 +37,9 @@
     "eslint-plugin-react": "^7.15.1",
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-standard": "^4.0.1",
+    "ol": "^6.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rollup": "^2.18.1",
     "rollup-plugin-peer-deps-external": "^2.2.3",
     "rollup-plugin-postcss": "^3.1.4"
