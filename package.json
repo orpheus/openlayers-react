@@ -1,6 +1,6 @@
 {
   "name": "ol6-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "react wrapper for openlayers-v6",
   "files": ["/dist"],
   "main": "dist/ol6-react-bundle.cjs.min.js",
@@ -18,8 +18,10 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "hex-to-rgba": "^2.0.1",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
     "ol": "^6.3.1",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
