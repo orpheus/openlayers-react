@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
-import useMapContext from 'rol/hooks/useMapContext'
-import createStyle from 'rol/helpers/create-style'
-import applyEvents, { removeEvents } from 'rol/util/apply-events'
+import { useMapContext, createStyle, applyEvents, removeEvents } from 'ol6-react'
 
 /**
  * @return {null|Component}

@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 
-window.ReactFake = React
-
-export const FakeStoreContext = React.createContext(null)
+export const FakeStoreContext = createContext(null)
 export default function FakeStore ({ children }) {
-  const [store, setStore] = React.useState({
+  const [store, setStore] = useState({
     activeTool: undefined,
     layerType: 'Polygon'
   })

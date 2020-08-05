@@ -11,17 +11,14 @@ import {
   Overlay,
   Interface,
   createStyle
-} from 'rol'
+} from 'ol6-react'
 import { TulumTile, TulumView } from '../../presets'
 //
 import { FakeStore, UseMapClick, Toolbar, MapTools } from '../../components'
 import lasLayers from '../../../mockData/layers'
 import lasFeatures from '../../../mockData/features'
 
-window.ReactMap = React
-
 function Map1 () {
-  // return null
   // typically our logic would go here for each child component: BAD
   // now we can create components with top level access to our map
   return <FakeStore>
