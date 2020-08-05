@@ -11,7 +11,8 @@
     "transpile-watch": "npx babel src --watch --out-dir lib",
     "bundle": "npx rollup -c",
     "build": "npm run transpile && npm run bundle",
-    "lint": "eslint --ext js,jsx --fix src/"
+    "lint": "eslint --ext js,jsx --fix src/",
+    "prepublish": "npm run build"
   },
   "author": "orpheus (ohryan)",
   "license": "ISC",
