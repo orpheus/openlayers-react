@@ -15,7 +15,6 @@ export default [
   // `file` and `format` for each target)
   {
     input: 'lib/index.js',
-    // external: ['ms'], what are externals?
     output: [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' },
@@ -30,6 +29,7 @@ export default [
       resolve(), // so Rollup can find `ms`
       commonjs(), // so Rollup can convert `ms` to an ES module
       postcss()
-    ]
+    ],
+    external: ['react', 'react-dom']
   }
 ]
